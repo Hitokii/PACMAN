@@ -145,22 +145,22 @@ while (True):
 #                                                         
 
     #TOP COLOR
-    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.centerx,player_hitbox.top))
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.centerx,player_hitbox.top -5))
     if colorb == 255:
         player_hitbox.y += 1
         UP = False
     #LEFT COLOR
-    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.left,player_hitbox.centery))
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.left -5,player_hitbox.centery))
     if colorb == 255:
         player_hitbox.x += 1
         LEFT = False
     #RIGHT COLOR
-    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.right,player_hitbox.centery))
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.right+5,player_hitbox.centery))
     if colorb == 255:
         player_hitbox.x -= 1
         RIGHT = False
     #BOTTOM COLOR
-    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.centerx,player_hitbox.bottom))
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.centerx,player_hitbox.bottom +5))
     if colorb == 255:
         player_hitbox.y -= 1
         BOTTOM = False
