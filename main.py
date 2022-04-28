@@ -36,9 +36,8 @@ player_hitbox = player.get_rect();
 player_hitbox.center = w//3,340
 
 
-color = (0,0,0)
-if color == (any,any,0):
-    print("test")
+
+
 
 
 #MURS 18
@@ -136,10 +135,7 @@ while (True):
                 LEFT = False
                 UP = False
                 DOWN = False
-            if event.key == pygame.K_SPACE:
-                color = pygame.Surface.get_at(SCREEN,(MOUSEX,MOUSEY))
-                if color == 255:
-                    print("WALL")
+
 #               __  __   _         _                       
 #              [  |[  | (_)       (_)                      
 #   .---.  .--. | | | | __  .--.  __  .--.  _ .--.  .--.   
@@ -148,16 +144,28 @@ while (True):
 #  '.___.''.__.[___[___[___[\__) [___'.__.'[___||__[\__) ) 
 #                                                         
 
-#    for each in range(len(collider)):
-#        if (player_hitbox.colliderect(collider[each])):
-#            if (player_hitbox.top <= collider[each].bottom and UP == True and player_hitbox.bottom >= collider[each].bottom):
-#                UP = False
-#            if (player_hitbox.left <= collider[each].right and LEFT == True and player_hitbox.right >= collider[each].right):
-#                LEFT = False
-#            if (player_hitbox.bottom >= collider[each].top and DOWN == True and player_hitbox.top <= collider[each].top):
-#                DOWN = False
-#            if (player_hitbox.right >= collider[each].left and RIGHT == True and player_hitbox.left <= collider[each].left):
-#                RIGHT = False
+    #TOP COLOR
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.centerx,player_hitbox.top))
+    if colorb == 255:
+        player_hitbox.y += 1
+        UP = False
+    #LEFT COLOR
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.left,player_hitbox.centery))
+    if colorb == 255:
+        player_hitbox.x += 1
+        LEFT = False
+    #RIGHT COLOR
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.right,player_hitbox.centery))
+    if colorb == 255:
+        player_hitbox.x -= 1
+        RIGHT = False
+    #BOTTOM COLOR
+    colorr,colorg,colorb,colora = pygame.Surface.get_at(SCREEN,(player_hitbox.centerx,player_hitbox.bottom))
+    if colorb == 255:
+        player_hitbox.y -= 1
+        BOTTOM = False
+
+
 
 
 
