@@ -10,9 +10,9 @@ Package : Pygame (lastest)
 
 BUG : Collisions
 
-TO DO : Add more Pacgum
-        Add Ghost
-        Add Super Pacgum
-        ADD SOUNDS EFFECTS !!! (it feel empty ;-;)
-
-Please leave some comments on how do you find this / how can i improve it ?
+TO DO : Ajouter + Pacgum
+        Ajouter Ennemi
+        Ajouter Super Pacgum
+        Ajouter Audio
+        
+Project non continué
